@@ -1,0 +1,13 @@
+body{
+    margin: 0 auto;
+}
+.main{
+    background: linear-gradient(135deg, #FF6B6B, #FF8E53, #FFC96C);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    align-items: center;
+    justify-content: center;
+}
