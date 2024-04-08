@@ -30,4 +30,4 @@ Your objective is to collect as many hearts as possible without crashing into wa
 -  Developed by Rudransh Shukla
 
 ## Have Fun!
-Enjoy playing Love Snake and feel the love! 💖🐍
+Enjoy playing Cupid's Catcher and feel the love! 💖🐍
