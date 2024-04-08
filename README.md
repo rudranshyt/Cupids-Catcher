@@ -1,9 +1,9 @@
 # Cupid's Catcher
 
-Welcome to Cupid's Catcher! 🐍❤️
+Welcome to Cupid's Catcher! 💖
 
 ## Introduction
-In this game, you control a snake on a quest for love. Navigate through the maze and collect hearts to make your snake grow longer. But be careful not to run into walls or your own tail! 
+In this game you collect hearts to increase your score and you get a reward when all hearts are collected
 
 ## Controls
 - Use the arrow keys to move the snake:
@@ -13,21 +13,20 @@ In this game, you control a snake on a quest for love. Navigate through the maze
   - Right arrow: Move Right
 
 ## Objective
-Your objective is to collect as many hearts as possible without crashing into walls or your own tail. Each heart you collect will make your snake longer. Can you reach the ultimate reward at the end?
+Your objective is to collect all hearts, and once done you can claim your reward
 
 ## Game Features
-- **Hearts**: Collect hearts to increase the length of your snake.
-- **Obstacles**: Watch out for walls and obstacles that can block your path.
-- **Reward**: Reach the end of the maze and find the ultimate reward of love!
+- **Hearts**: Collect hearts and increse
+- **Reward**: Collect all hearts  and find the ultimate reward of love!
 
 ## How to Play
-1. Use the arrow keys to navigate the snake.
-2. Collect hearts to make your snake longer.
-3. Avoid crashing into walls or your own tail.
-4. Reach the end of the maze to find the ultimate reward.
+1. Use the arrow keys to navigate.
+2. Collect hearts to increase your score.
+3. Avoid crashing into walls .
+4. Collect all hearts to find the ultimate reward.
 
 ## Author
 -  Developed by Rudransh Shukla
 
 ## Have Fun!
-Enjoy playing Cupid's Catcher and feel the love! 💖🐍
+Enjoy playing Cupid's Catcher and feel the love! 💖
