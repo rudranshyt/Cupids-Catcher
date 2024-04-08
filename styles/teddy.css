@@ -1,15 +1,24 @@
 body {
-    margin: 0;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #86b8ff, #a9d4ff);
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.main{
+    animation: popUp 1s ease forwards;
 }
 
-.main {
-    background: linear-gradient(135deg, #55a0e8, #7b8fe5);
-    height: 100vh;
+.bear {
+   margin-top: 20%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     position: relative;
+    animation: popUp 1s ease forwards;
 }
 
 .face {
@@ -21,6 +30,7 @@ body {
     top: 50%;
     transform: translateY(-130%);
     z-index: 1;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .ear {
@@ -29,6 +39,7 @@ body {
     width: 60px;
     height: 120px;
     border-radius: 50%;
+     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 .ear.left {
@@ -70,6 +81,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .nose {
@@ -81,6 +93,7 @@ body {
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .mouth-circle {
@@ -92,6 +105,7 @@ body {
     top: 55%;
     left: 50%;
     transform: translateX(-50%);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 .body {
     border-radius: 50%;
@@ -100,6 +114,7 @@ body {
     background-color: #8b5a2b;
     position: relative;
     z-index: 0;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .foot {
@@ -111,6 +126,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .inner-foot {
@@ -137,6 +153,7 @@ body {
     height: 150px;
     background-color: #8b5a2b;
     border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .hand.left {
@@ -159,5 +176,16 @@ body {
     bottom: 20%; 
     left: 50%;
     transform: translateX(-50%);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+@keyframes popUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
