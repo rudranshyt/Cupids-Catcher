@@ -1,7 +1,7 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-const borderWidth = 10;
+const borderWidth = 5;
 
 const player = {
   x: canvas.width / 2,
@@ -120,6 +120,12 @@ function animate() {
   ctx.fillStyle = "black";
   ctx.font = "20px Arial";
   ctx.fillText("Score: " + score, 10, 30);
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const username = urlParams.get("username");
+
+  document.getElementById("infoText").textContent =
+    "Hey " + username + ", collect all hearts to claim your reward";
 
   requestAnimationFrame(animate);
 }
