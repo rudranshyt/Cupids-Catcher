@@ -1,21 +1,33 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
+const cupidImage = new Image();
+cupidImage.src = "/cupid-removebg-preview.png";
 
 const borderWidth = 5;
 
 const player = {
   x: canvas.width / 2,
   y: canvas.height - 50,
-  size: 30,
+  size: 90,
   speed: 5,
-  draw() {
-    ctx.fillStyle = "blue";
-    ctx.fillRect(
-      this.x - this.size / 2,
-      this.y - this.size / 2,
-      this.size,
-      this.size
-    );
+  draw: function () {
+    if (cupidImage.complete) {
+      ctx.drawImage(
+        cupidImage,
+        this.x - this.size / 2,
+        this.y - this.size / 2,
+        this.size,
+        this.size
+      );
+    } else {
+      ctx.fillStyle = "blue";
+      ctx.fillRect(
+        this.x - this.size / 2,
+        this.y - this.size / 2,
+        this.size,
+        this.size
+      );
+    }
   },
 };
 
@@ -156,4 +168,6 @@ document.addEventListener("keyup", (event) => {
   }
 });
 
-animate();
+cupidImage.onload = function () {
+  animate();
+};
