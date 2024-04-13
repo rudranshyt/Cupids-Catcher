@@ -5,6 +5,9 @@ cupidImage.src = "/cupid-removebg-preview.png";
 
 const borderWidth = 5;
 
+canvas.width = 1000;
+canvas.height = 500;
+
 const player = {
   x: canvas.width / 2,
   y: canvas.height - 50,
@@ -39,7 +42,7 @@ function generateHearts(numHearts) {
     hearts.push({
       x: Math.random() * canvas.width,
       y: (Math.random() * canvas.height) / 2,
-      size: Math.random() * (40 - 20) + 20,
+      size: Math.random() * 50,
       isCollected: false,
       image: "💖",
     });
