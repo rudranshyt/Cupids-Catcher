@@ -40,9 +40,9 @@ let score = 0;
 function generateHearts(numHearts) {
   for (let i = 0; i < numHearts; i++) {
     hearts.push({
-      x: Math.random() * canvas.width,
-      y: (Math.random() * canvas.height) / 2,
-      size: Math.random() * 50,
+      x: Math.random() * (canvas.width - 3),
+      y: (Math.random() * (canvas.height - 3)) / 2,
+      size: 50,
       isCollected: false,
       image: "💖",
     });
@@ -170,6 +170,72 @@ document.addEventListener("keyup", (event) => {
     isDownPressed = false;
   }
 });
+
+canvas.addEventListener("touchstart", handleTouchStart);
+canvas.addEventListener("touchmove", handleTouchMove);
+canvas.addEventListener("touchend", handleTouchEnd);
+
+function handleTouchStart(event) {
+  event.preventDefault();
+  handleTouchEvent(event.touches[0]);
+}
+
+function handleTouchMove(event) {
+  event.preventDefault();
+  handleTouchEvent(event.touches[0]);
+}
+
+function handleTouchEnd(event) {
+  event.preventDefault();
+  isLeftPressed = false;
+  isRightPressed = false;
+  isUpPressed = false;
+  isDownPressed = false;
+}
+
+function handleTouchEvent(touch) {
+  const touchX = touch.clientX - canvas.offsetLeft;
+  const touchY = touch.clientY - canvas.offsetTop;
+
+  const angle = Math.atan2(touchY - player.y, touchX - player.x);
+
+  if (angle >= -Math.PI / 4 && angle <= Math.PI / 4) {
+    isRightPressed = true;
+    isLeftPressed = false;
+  } else if (angle > (3 * Math.PI) / 4 || angle < (-3 * Math.PI) / 4) {
+    isLeftPressed = true;
+    isRightPressed = false;
+  } else {
+    isLeftPressed = false;
+    isRightPressed = false;
+  }
+
+  if (angle > (-3 * Math.PI) / 4 && angle < -Math.PI / 4) {
+    isUpPressed = true;
+    isDownPressed = false;
+  } else if (angle > Math.PI / 4 && angle < (3 * Math.PI) / 4) {
+    isDownPressed = true;
+    isUpPressed = false;
+  } else {
+    isUpPressed = false;
+    isDownPressed = false;
+  }
+}
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth * 0.9;
+  canvas.height = window.innerHeight * 0.5;
+  player.size = Math.min(canvas.width, canvas.height) / 10;
+  player.x = canvas.width / 2;
+  player.y = canvas.height - player.size;
+
+  for (let heart of hearts) {
+    heart.size = Math.min(canvas.width, canvas.height) / 20;
+    heart.x = Math.random() * canvas.width;
+    heart.y = Math.random() * (canvas.height / 2);
+  }
+}
+window.addEventListener("resize", resizeCanvas);
 
 cupidImage.onload = function () {
   animate();
