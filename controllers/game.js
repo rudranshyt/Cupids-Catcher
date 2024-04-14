@@ -1,7 +1,7 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const cupidImage = new Image();
-cupidImage.src = "/cupid-removebg-preview.png";
+cupidImage.src = "../cupid-removebg-preview.png";
 
 const borderWidth = 5;
 
