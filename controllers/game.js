@@ -5,8 +5,27 @@ cupidImage.src = "../cupid-removebg-preview.png";
 
 const borderWidth = 5;
 
-canvas.width = 1000;
-canvas.height = 500;
+function adjustCanvasSize() {
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+
+  if (
+    (viewportWidth === 375 && viewportHeight === 667) ||
+    (viewportWidth === 667 && viewportHeight === 375)
+  ) {
+    canvas.width = viewportWidth;
+    canvas.height = viewportHeight;
+  } else if (viewportWidth >= 1440) {
+    canvas.width = 1000;
+    canvas.height = 500;
+  } else {
+    canvas.width = 300;
+    canvas.height = 500;
+  }
+}
+
+adjustCanvasSize();
+window.addEventListener("resize", adjustCanvasSize);
 
 const player = {
   x: canvas.width / 2,

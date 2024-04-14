@@ -5,7 +5,8 @@ body {
 .main {
     background: linear-gradient(135deg, #FF6B6B, #FF8E53, #FFC96C);
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     font-family: 'Arial', sans-serif;
